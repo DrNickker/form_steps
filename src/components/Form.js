@@ -8,7 +8,7 @@ const Form = props => {
     date: '',
     km: '',
   });
-  
+
 
   useEffect(() => {
     if (Object.keys(editModeData).length) {
@@ -28,6 +28,7 @@ const Form = props => {
       }
     })
   }
+  
   
   return (
     <form className="form" onSubmit={(e) => handleSubmit(e, currentData)}>
