@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
-function westEuropeanDateToMilliseconds(dateString) {
+function DateToMilliseconds(dateString) {
   const arr = dateString.split('.');
-  const parsableString = `${arr[1]}/${arr[0]}/${arr[2]}`;
+  const parsableString = `${arr[0]}${arr[1]}${arr[2]}`;
   return new Date(parsableString).getTime();
 }
 
@@ -26,7 +26,7 @@ const Table = props => {
         {
           tableData
             .sort((a, b) => {
-              return westEuropeanDateToMilliseconds(b.date) - westEuropeanDateToMilliseconds(a.date)
+              return DateToMilliseconds(b.date) - DateToMilliseconds(a.date)
             })
               .map(row => {
                 return(
@@ -53,6 +53,8 @@ const Table = props => {
     </table> 
   );
 };
+
+
 
 Table.propTypes = {
   tableData: PropTypes.arrayOf(

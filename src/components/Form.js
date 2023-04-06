@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Form = props => {
   const {handleSubmit, editModeData} = props;
 
-  const [ currentData, setCurrentData ] = useState({
+  const [currentData, setCurrentData] = useState ({
     date: '',
     km: '',
   });
@@ -20,7 +20,7 @@ const Form = props => {
   }, [editModeData]);
 
   const handleChange = e => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setCurrentData(prevData => {
       return {
         ...prevData,
